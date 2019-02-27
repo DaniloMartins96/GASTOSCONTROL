@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gastos_Activity">
+
+    <EditText
+        android:id="@+id/mainGastos"
+        android:layout_width="312dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/mainGastos"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="321dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Informe seus gastos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/valorGasto"
+        android:layout_width="314dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/valorGasto"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/mainGastos"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/mainGastos"
+        app:layout_constraintTop_toBottomOf="@+id/mainGastos" />
+
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/btnInfo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/valorGasto"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/valorGasto"
+        app:layout_constraintTop_toBottomOf="@+id/valorGasto"
+        app:layout_constraintVertical_bias="0.111" />
+</android.support.constraint.ConstraintLayout>
