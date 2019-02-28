@@ -3,4 +3,6 @@
     <string name="mainGastos">Informe com o que voce gastou</string>
     <string name="valorGasto">Informe o valor do produto</string>
     <string name="btnInfo">Informar</string>
+    <string name="mainDate">Informe a data</string>
+    <string name="mainDescricao">Informe o seu gasto</string>
 </resources>

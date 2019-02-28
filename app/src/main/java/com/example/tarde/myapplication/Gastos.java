@@ -6,18 +6,19 @@ public class Gastos {
     private double valor;
     private String data;
 
-    public Gastos(String descricao, double valor, String data) {
+    public Gastos(String descricao, String valor, String data) {
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
     }
 
-    public Gastos(long idGasto, String descricao) {
+    public Gastos(long idGasto, String descricao, double valor, String data) {
         this.idGasto = idGasto;
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
     }
+
 
     public long getIdGasto(){
         return idGasto;
