@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listaDeGastos = findViewById(R.id.mainlistaDeGastos);
+        listaDeGastos = findViewById(R.id.main_lista_gastos);
         buttonAdd = findViewById(R.id.buttonAdd);
 
 

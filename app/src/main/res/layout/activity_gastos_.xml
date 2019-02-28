@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/mainGastos"
-        android:layout_width="312dp"
-        android:layout_height="66dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/mainGastos"
@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="321dp"
-        android:layout_height="66dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="60dp"
@@ -37,8 +37,8 @@
 
     <EditText
         android:id="@+id/valorGasto"
-        android:layout_width="314dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/valorGasto"
@@ -52,13 +52,25 @@
         android:id="@+id/btnInfo"
         android:layout_width="162dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/btnInfo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/valorGasto"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
         app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/valorGasto"
-        app:layout_constraintTop_toBottomOf="@+id/valorGasto"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
         app:layout_constraintVertical_bias="0.111" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="@+id/valorGasto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/valorGasto"
+        app:layout_constraintTop_toBottomOf="@+id/valorGasto" />
 </android.support.constraint.ConstraintLayout>

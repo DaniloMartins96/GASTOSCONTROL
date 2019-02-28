@@ -31,6 +31,8 @@ public class Gastos_Activity extends AppCompatActivity {
             btnInfo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //Recuperar valores do formulario
+                    //Gerar um objeto
                     String gastos = mainGastos.getText().toString();
                     double valor = Double.parseDouble(valorGasto.getText().toString());
 
