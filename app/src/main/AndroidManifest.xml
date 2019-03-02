@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Gastos_Activity"></activity>
+        <activity android:name=".EdicaoActivity"></activity>
     </application>
 
 </manifest>

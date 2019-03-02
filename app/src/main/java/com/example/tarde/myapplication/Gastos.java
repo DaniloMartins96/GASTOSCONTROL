@@ -1,12 +1,14 @@
 package com.example.tarde.myapplication;
 
-public class Gastos {
+import java.io.Serializable;
+
+public class Gastos implements Serializable{
     private long idGasto;
     private String descricao;
     private double valor;
     private String data;
 
-    public Gastos(String descricao, String valor, String data) {
+    public Gastos(String descricao, double valor, String data) {
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
@@ -35,10 +37,10 @@ public class Gastos {
 
     @Override
     public String toString() {
-        return "Gastos\n" +
+        return "Seu Gasto\n" +
                 "\nidGasto = " + idGasto +
                 "\ndescricao = " + descricao +
-                "\nvalor = " + valor +
+                "\nvalor = " + valor +"R$"+
                 "\ndata = " + data;
     }
 }

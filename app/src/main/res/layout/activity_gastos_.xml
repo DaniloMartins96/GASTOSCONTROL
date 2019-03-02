@@ -14,13 +14,13 @@
         android:ems="10"
         android:hint="@string/mainDescricao"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/editTitulo"
         app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/editTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/editTitulo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/editTitulo"
         android:layout_width="321dp"
         android:layout_height="66dp"
         android:layout_marginStart="8dp"
@@ -42,7 +42,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/valorGasto"
-        android:inputType="number"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/mainDescricao"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/mainDescricao"
