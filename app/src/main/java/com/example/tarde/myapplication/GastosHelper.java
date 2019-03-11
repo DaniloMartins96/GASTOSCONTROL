@@ -10,6 +10,7 @@ class GastosHelper {
     private TextView mainDescricao;
     private EditText valorGasto;
     private EditText mainDate;
+    private Gastos gasto;
 
 
     public GastosHelper(Gastos_Activity activity){
@@ -22,6 +23,7 @@ class GastosHelper {
     }
 
     public void carregaCampos(Gastos gastos) {
+        this.gasto = gastos;
         mainDescricao.setText(gastos.getDescricao());
         valorGasto.setText(String.valueOf(gastos.getValor()));
         mainDate.setText(gastos.getData());
@@ -39,6 +41,9 @@ class GastosHelper {
         String descricao = mainDescricao.getText().toString();
         double valor = Double.parseDouble(valorGasto.getText().toString());
         String data = mainDate.getText().toString();
+        if (gasto != null) {
+            return new Gastos(this.gasto.getIdGasto(),descricao ,valor , data);
+        }
 
         return new Gastos(descricao ,valor , data);
     }

@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class EdicaoActivity extends AppCompatActivity {
 
-    private GastosHelper Helper;
+    private GastosHelper helper;
     private Button btnInfo;
     private GastoDAO gastoDAO;
     private TextView editTitulo;
@@ -46,26 +46,26 @@ public class EdicaoActivity extends AppCompatActivity {
         editTitulo = findViewById(R.id.editTitulo);
         editTitulo.setText("EDIT GASTOS");
         btnInfo = findViewById(R.id.btnInfo);
+        btnInfo.setText("CONFIRMAR");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("NEED CONTROL");
 
-        Helper = new GastosHelper(this);
+        helper = new GastosHelper(this);
+        gastoDAO = new GastoDAO(this);
 
         Intent intent = getIntent();
         Gastos gastos = (Gastos) intent.getSerializableExtra(MainActivity.LISTA_GASTOS);
         if (gastos != null) {
-            Helper.carregaCampos(gastos);
+            helper.carregaCampos(gastos);
         }
-
-
 
 
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Gastos gastos = Helper.getGastos();
+                Gastos gastos = helper.getGastos();
                 if (gastoDAO.editar(gastos) ==-1){
                     Toast.makeText(EdicaoActivity.this,"Editado com sucesso",Toast.LENGTH_LONG).show();
                 } else {

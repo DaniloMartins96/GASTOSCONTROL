@@ -42,8 +42,9 @@ public class Gastos_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_gastos_);
 
         editTitulo = findViewById(R.id.editTitulo);
-        editTitulo.setText("EDIT GASTOS");
+        editTitulo.setText("EDITAR SEUS GASTOS");
         btnInfo = findViewById(R.id.btnInfo);
+        btnInfo.setText("CONFIRMAR");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

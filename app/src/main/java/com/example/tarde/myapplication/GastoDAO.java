@@ -44,7 +44,7 @@ public class GastoDAO extends SQLiteOpenHelper {
     public int editar(Gastos gastos) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues dados = getContentValues(gastos);
-        String selection = "idGastos = ?";
+        String selection = "idGasto = ?";
         String[] args = {String.valueOf(gastos.getIdGasto())};
 
         int resultado = db.update("gastos", dados, selection, args);
