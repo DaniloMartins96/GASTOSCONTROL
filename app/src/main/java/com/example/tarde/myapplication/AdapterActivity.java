@@ -69,6 +69,8 @@ public class AdapterActivity extends BaseAdapter {
         });
 
 
+
+
         return view;
 
     }
