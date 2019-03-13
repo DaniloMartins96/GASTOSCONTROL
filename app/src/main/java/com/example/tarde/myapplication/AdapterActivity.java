@@ -68,12 +68,6 @@ public class AdapterActivity extends BaseAdapter {
             }
         });
 
-        btnExcluir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Gastos gastos = GastosHelper.();
-            }
-        });
 
         return view;
 

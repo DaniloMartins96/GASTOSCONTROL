@@ -37,7 +37,7 @@ class GastosHelper {
     }
 
 
-    public  Gastos getGastos(){
+    public Gastos getGastos(){
         String descricao = mainDescricao.getText().toString();
         double valor = Double.parseDouble(valorGasto.getText().toString());
         String data = mainDate.getText().toString();
