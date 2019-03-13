@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -65,6 +66,15 @@ public class AdapterActivity extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(act,EdicaoActivity.class);
                 act.startActivity(intent);
+            }
+        });
+
+        btnExcluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(act, "Arquivo Excluido", Toast.LENGTH_SHORT).show();
+                getItemId(position);
+
             }
         });
 
