@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         listaDeGastos = findViewById(R.id.main_lista_gastos);
         buttonAdd = findViewById(R.id.buttonAdd);
-
 
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -58,17 +58,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     protected void onResume() {
         super.onResume();
 
         GastoDAO gastoDAO = new GastoDAO(this);
         List<Gastos>gastos = gastoDAO.listaTodosGastos();
+        ListView listaDeGastos = (ListView) findViewById(R.id.main_lista_gastos) ;
+//
+//        ArrayAdapter<Gastos> adapter = new ArrayAdapter<>(this,
+//                android.R.layout.simple_list_item_1,gastos);
 
-        ArrayAdapter<Gastos> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,gastos);
+        AdapterActivity adapter = new AdapterActivity(gastos,this);
 
         listaDeGastos.setAdapter(adapter);
+
+
+
     }
 
     }

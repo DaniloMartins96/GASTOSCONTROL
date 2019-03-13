@@ -5,4 +5,5 @@
     <string name="btnInfo">Informar</string>
     <string name="mainDate">Informe a data</string>
     <string name="mainDescricao">Informe o seu gasto</string>
+    <string name="descricao">editListDescricao</string>
 </resources>

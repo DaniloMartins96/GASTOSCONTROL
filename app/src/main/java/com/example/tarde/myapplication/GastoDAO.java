@@ -52,6 +52,17 @@ public class GastoDAO extends SQLiteOpenHelper {
         return resultado;
     }
 
+    public int deletar(long idGastos) {
+        SQLiteDatabase db = getWritableDatabase();
+        String selection = "idGastos = ?";
+        String[] args = {String.valueOf(idGastos)};
+
+        int resultado = db.delete("Gastos", selection, args);
+        db.close();
+        return resultado;
+
+    }
+
 
     public long inserir(Gastos gastos) {
         ContentValues dados = new ContentValues();
