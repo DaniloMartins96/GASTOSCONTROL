@@ -15,6 +15,7 @@ public class AdapterActivity extends BaseAdapter {
     public static final double LINHA_AFETADA = 1;
     private final List<Gastos> gastoslista;
     private final Activity act;
+    private static GastoDAO gastoDAO;
 
     public AdapterActivity(List<Gastos> gastos, Activity ect, Activity act) {
         this.gastoslista = gastos;
@@ -42,9 +43,9 @@ public class AdapterActivity extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = act.getLayoutInflater().inflate(R.layout.item_lista,parent,false);
-        Gastos gastos = gastoslista.get(position);
+        final Gastos gastos = gastoslista.get(position);
 
         //pegando as referencias da views
         TextView editListDescricao = (TextView)
@@ -55,6 +56,8 @@ public class AdapterActivity extends BaseAdapter {
         view.findViewById(R.id.editListData);
         FloatingActionButton btnExcluir = (FloatingActionButton)
         view.findViewById(R.id.btnExcluir);
+
+        gastoDAO = new GastoDAO(act);
 
         //populando as views
         editListDescricao.setText(gastos.getDescricao());
@@ -72,8 +75,10 @@ public class AdapterActivity extends BaseAdapter {
         btnExcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(act, "Arquivo Excluido", Toast.LENGTH_SHORT).show();
-                getItemId(position);
+                Toast.makeText(act, "Arquivo Excluido" + getItemId(position), Toast.LENGTH_SHORT).show();
+                if (GastoDAO.deletar(gastos.getIdGasto()) == LINHA_AFETADA)
+
+
 
             }
         });
