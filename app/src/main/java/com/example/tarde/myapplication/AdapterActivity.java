@@ -59,6 +59,7 @@ public class AdapterActivity extends BaseAdapter {
 
         gastoDAO = new GastoDAO(act);
 
+
         //populando as views
         editListDescricao.setText(gastos.getDescricao());
         editListValor.setText(String.valueOf(gastos.getValor()));
@@ -76,15 +77,17 @@ public class AdapterActivity extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(act, "Arquivo Excluido" + getItemId(position), Toast.LENGTH_SHORT).show();
-                if (GastoDAO.deletar(gastos.getIdGasto()) == LINHA_AFETADA)
+                if (GastoDAO.deletar(gastos.getIdGasto()) == LINHA_AFETADA){
+                }else{
+                    act.finish();
+                }
+
+
 
 
 
             }
         });
-
-
-
 
         return view;
 
