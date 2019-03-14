@@ -44,7 +44,7 @@ public class EdicaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gastos_);
 
         editTitulo = findViewById(R.id.editTitulo);
-        editTitulo.setText("EDIT GASTOS");
+        editTitulo.setText("ALTERAR GASTOS");
         btnInfo = findViewById(R.id.btnInfo);
         btnInfo.setText("CONFIRMAR");
 

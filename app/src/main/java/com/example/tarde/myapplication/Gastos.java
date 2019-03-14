@@ -3,7 +3,7 @@ package com.example.tarde.myapplication;
 import java.io.Serializable;
 
 public class Gastos implements Serializable{
-    private long idGasto;
+    private long idGastos;
     private String descricao;
     private double valor;
     private String data;
@@ -14,16 +14,17 @@ public class Gastos implements Serializable{
         this.data = data;
     }
 
-    public Gastos(long idGasto, String descricao, double valor, String data) {
-        this.idGasto = idGasto;
+    public Gastos(long idGastos, String descricao, double valor, String data) {
+        this.idGastos = idGastos;
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
     }
 
 
-    public long getIdGasto(){
-        return idGasto;
+
+    public long getIdGastos(){
+        return idGastos;
     }
     public String getDescricao(){
         return descricao;
@@ -38,10 +39,9 @@ public class Gastos implements Serializable{
     @Override
     public String toString() {
         return "Seu Gasto\n" +
-                "\nidGasto = " + idGasto +
+                "\nidGasto = " + idGastos +
                 "\ndescricao = " + descricao +
                 "\nvalor = " + valor +"R$"+
                 "\ndata = " + data;
     }
 }
-

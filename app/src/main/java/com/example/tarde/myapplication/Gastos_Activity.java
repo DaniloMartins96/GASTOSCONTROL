@@ -42,7 +42,7 @@ public class Gastos_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_gastos_);
 
         editTitulo = findViewById(R.id.editTitulo);
-        editTitulo.setText("EDITAR SEUS GASTOS");
+        editTitulo.setText("INFORME SEUS GASTOS");
         btnInfo = findViewById(R.id.btnInfo);
         btnInfo.setText("CONFIRMAR");
 

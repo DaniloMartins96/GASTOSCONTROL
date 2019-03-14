@@ -42,7 +42,7 @@ class GastosHelper {
         double valor = Double.parseDouble(valorGasto.getText().toString());
         String data = mainDate.getText().toString();
         if (gasto != null) {
-            return new Gastos(this.gasto.getIdGasto(),descricao ,valor , data);
+            return new Gastos(this.gasto.getIdGastos(),descricao ,valor , data);
         }
 
         return new Gastos(descricao ,valor , data);

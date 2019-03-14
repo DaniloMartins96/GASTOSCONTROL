@@ -45,16 +45,17 @@ public class GastoDAO extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues dados = getContentValues(gastos);
         String selection = "idGasto = ?";
-        String[] args = {String.valueOf(gastos.getIdGasto())};
+        String[] args = {String.valueOf(gastos.getIdGastos())};
 
         int resultado = db.update("gastos", dados, selection, args);
         db.close();
         return resultado;
     }
 
+
     public int deletar(long idGastos) {
         SQLiteDatabase db = getWritableDatabase();
-        String selection = "idGastos = ?";
+        String selection = "idGasto = ?";
         String[] args = {String.valueOf(idGastos)};
 
         int resultado = db.delete("Gastos", selection, args);
@@ -83,17 +84,26 @@ public class GastoDAO extends SQLiteOpenHelper {
         List<Gastos> listaGastos = new ArrayList<>();
 
         while (cursor.moveToNext()) {
-            long idGasto = cursor.getLong(cursor.getColumnIndex("idGasto"));
+            long idGastos = cursor.getLong(cursor.getColumnIndex("idGasto"));
             String descricao = cursor.getString(cursor.getColumnIndex("descricao"));
             double valor = Double.parseDouble(cursor.getString(cursor.getColumnIndex("valor")));
             String data = cursor.getString(cursor.getColumnIndex("data"));
 
-            Gastos gastos = new Gastos(idGasto, descricao, valor, data);
+            Gastos gastos = new Gastos(idGastos, descricao, valor, data);
             listaGastos.add(gastos);
         }
 
         return listaGastos;
 
 
+    }
+
+    public double Total(){
+        SQLiteDatabase db = getReadableDatabase();
+        String sql = "SELECT SUM(valor) as valor FROM gastos";
+        Cursor cursor = db.rawQuery(sql, null);
+        cursor.moveToNext();
+        double valor = Double.parseDouble(cursor.getString(cursor.getColumnIndex("valor")));
+        return valor;
     }
 }

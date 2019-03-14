@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 import java.io.Serializable;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String LISTA_GASTOS = "listaGastos";
     private ListView listaDeGastos;
     private FloatingActionButton buttonAdd;
+    private TextView txtTotal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         listaDeGastos = findViewById(R.id.main_lista_gastos);
         buttonAdd = findViewById(R.id.buttonAdd);
+        txtTotal = findViewById(R.id.txtTotal);
 
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
         GastoDAO gastoDAO = new GastoDAO(this);
         List<Gastos>gastos = gastoDAO.listaTodosGastos();
+
+        double totalGastos = recuperaTotalGastos(gastos);
         ListView listaDeGastos = (ListView) findViewById(R.id.main_lista_gastos) ;
 //
 //        ArrayAdapter<Gastos> adapter = new ArrayAdapter<>(this,
@@ -74,10 +80,17 @@ public class MainActivity extends AppCompatActivity {
 
         listaDeGastos.setAdapter(adapter);
 
-
-
     }
 
+
+    private double recuperaTotalGastos(List<Gastos> listaDeGastos) {
+        double resultado = 0;
+        for (Gastos gastos : listaDeGastos) {
+            resultado += listaDeGastos;
+
+        }
     }
+
+}
 
 

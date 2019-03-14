@@ -16,6 +16,7 @@ public class AdapterActivity extends BaseAdapter {
     private final List<Gastos> gastoslista;
     private final Activity act;
     private static GastoDAO gastoDAO;
+    private static Gastos gastos;
 
     public AdapterActivity(List<Gastos> gastos, Activity ect, Activity act) {
         this.gastoslista = gastos;
@@ -39,7 +40,7 @@ public class AdapterActivity extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return gastoslista.get(position).getIdGasto();
+        return gastoslista.get(position).getIdGastos();
     }
 
     @Override
@@ -54,10 +55,11 @@ public class AdapterActivity extends BaseAdapter {
         view.findViewById(R.id.editListValor);
         TextView editListData = (TextView)
         view.findViewById(R.id.editListData);
-        FloatingActionButton btnExcluir = (FloatingActionButton)
+        final FloatingActionButton btnExcluir = (FloatingActionButton)
         view.findViewById(R.id.btnExcluir);
 
         gastoDAO = new GastoDAO(act);
+
 
 
         //populando as views
@@ -76,17 +78,12 @@ public class AdapterActivity extends BaseAdapter {
         btnExcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(act, "Arquivo Excluido" + getItemId(position), Toast.LENGTH_SHORT).show();
-                if (GastoDAO.deletar(gastos.getIdGasto()) == LINHA_AFETADA){
+                if (gastoDAO.deletar(gastos.getIdGastos()) == LINHA_AFETADA) {
+                    Toast.makeText(act, "Arquivo Excluido" + getItemId(position), Toast.LENGTH_SHORT).show();
                 }else{
-                    act.finish();
+                    Toast.makeText(act,"Não funcionou!"+ getItemId(position), Toast.LENGTH_LONG).show();
                 }
-
-
-
-
-
-            }
+                }
         });
 
         return view;
