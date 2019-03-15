@@ -71,6 +71,7 @@ public class AdapterActivity extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(act,EdicaoActivity.class);
+                intent.putExtra("edicao",gastoslista.get(position));
                 act.startActivity(intent);
             }
         });

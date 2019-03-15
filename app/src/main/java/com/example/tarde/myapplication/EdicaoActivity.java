@@ -57,7 +57,7 @@ public class EdicaoActivity extends AppCompatActivity {
         gastoDAO = new GastoDAO(this);
 
         Intent intent = getIntent();
-        Gastos gastos = (Gastos) intent.getSerializableExtra(MainActivity.LISTA_GASTOS);
+        Gastos gastos = (Gastos) intent.getSerializableExtra("edicao");
         if (gastos != null) {
             helper.carregaCampos(gastos);
         }
