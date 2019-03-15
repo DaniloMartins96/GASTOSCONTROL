@@ -47,7 +47,7 @@ public class GastoDAO extends SQLiteOpenHelper {
         String selection = "idGasto = ?";
         String[] args = {String.valueOf(gastos.getIdGastos())};
 
-        int resultado = db.update("gastos", dados, selection, args);
+        int resultado = db.update("Gastos", dados, selection, args);
         db.close();
         return resultado;
     }

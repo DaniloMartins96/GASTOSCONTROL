@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listaDeGastos;
     private FloatingActionButton buttonAdd;
     private TextView txtTotal;
+    private GastoDAO gastoDAO;
 
 
     @Override
@@ -84,11 +85,28 @@ public class MainActivity extends AppCompatActivity {
 
 
     private double recuperaTotalGastos(List<Gastos> listaDeGastos) {
-        double resultado = 0;
         for (Gastos gastos : listaDeGastos) {
-            resultado += listaDeGastos;
+//            resultado += listaDeGastos;
+
+//            private int recuperaTotalGastos(List<Gastos> listaDeGastos) {
+//                double resultado = 0;
+//         for (Gastos gastos : listaDeGastos) {
+//            resultado += listaDeGastos;
+//
+//        List<Gastos> listadegastos = new ArrayList<>();
+//        for (int i = 0; i < listaDeGastos.size(); i++) {
+//            listaDeGastos.get(i);
+//
+//                txtTotal.setText("TOTAL GASTO");
+//
+//                for (Gastos gastos : listaDeGastos) {
+//                    double total = 0;
+//                    for (Gastos valor : listaDeGastos) {
+//                        total += gastos.getValor();
+//                    }
 
         }
+        return 0;
     }
 
 }

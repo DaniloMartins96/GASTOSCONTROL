@@ -21,6 +21,7 @@ public class EdicaoActivity extends AppCompatActivity {
     private Button btnInfo;
     private GastoDAO gastoDAO;
     private TextView editTitulo;
+    private Gastos gastos;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
